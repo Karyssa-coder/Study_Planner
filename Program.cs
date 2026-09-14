@@ -126,7 +126,7 @@
 
                             case 2:
                                 Console.WriteLine("===========================");
-                                Console.WriteLine("UPDATING Project:");
+                                Console.WriteLine("UPDATING PROJECT:");
                                 Console.WriteLine("Project: ");
                                 Console.WriteLine(task);
 
@@ -169,12 +169,149 @@
                                 break;
                         }
                         break;
+
                     case 3:
+                        Console.WriteLine("===========================");
                         Console.WriteLine("Activity Task");
+                        Console.WriteLine("1. Add Activity");
+                        Console.WriteLine("2. Update Activity");
+                        Console.WriteLine("3. Remove Activity");
+                        Console.WriteLine("4. View Project");
+                        Console.WriteLine("5. Exit");
+                        Console.Write("Enter choice: ");
+                        UserChoice = Convert.ToInt16(Console.ReadLine());
+                        Console.WriteLine("=========================== \n");
+
+                        switch (UserChoice)
+                        {
+                            case 1:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("ADDING ACTIVITY:");
+                                Console.Write("Write a new Activity: ");
+                                add = Console.ReadLine();
+                                task += add + "\n";
+                                Console.WriteLine("\nYour Activities are: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 2:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("UPDATING ACTIVITY:");
+                                Console.WriteLine("Activity: ");
+                                Console.WriteLine(task);
+
+                                Console.Write("Enter a Activity to Update: ");
+                                string old = Console.ReadLine();
+
+                                Console.Write("\nUpdate Activity: ");
+                                string upd = Console.ReadLine();
+                                task = task.Replace(old, upd);
+
+                                Console.WriteLine("\nActivities: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 3:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("REMOVING ACTIVITY:");
+                                Console.WriteLine("Activity: ");
+                                Console.WriteLine(task);
+
+                                Console.Write("Enter a Activity to Remove: ");
+                                string remove = Console.ReadLine();
+                                task = task.Replace(remove, "");
+
+                                Console.WriteLine("\nActivities: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 4:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("ALL ACTIVITIES: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            default:
+                                Console.WriteLine("Invalid Input. Please choose a valid option.");
+                                break;
+                        }
                         break;
+
                     case 4:
+                        Console.WriteLine("===========================");
                         Console.WriteLine("Exam/Quiz Reviewer");
+                        Console.WriteLine("1. Add Activity");
+                        Console.WriteLine("2. Update Activity");
+                        Console.WriteLine("3. Remove Activity");
+                        Console.WriteLine("4. View Project");
+                        Console.WriteLine("5. Exit");
+                        Console.Write("Enter choice: ");
+                        UserChoice = Convert.ToInt16(Console.ReadLine());
+                        Console.WriteLine("=========================== \n");
+
+                        switch (UserChoice)
+                        {
+                            case 1:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("ADDING ACTIVITY:");
+                                Console.Write("Write a new Activity: ");
+                                add = Console.ReadLine();
+                                task += add + "\n";
+                                Console.WriteLine("\nYour Activities are: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 2:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("UPDATING ACTIVITY:");
+                                Console.WriteLine("Activity: ");
+                                Console.WriteLine(task);
+
+                                Console.Write("Enter a Activity to Update: ");
+                                string old = Console.ReadLine();
+
+                                Console.Write("\nUpdate Activity: ");
+                                string upd = Console.ReadLine();
+                                task = task.Replace(old, upd);
+
+                                Console.WriteLine("\nActivities: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 3:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("REMOVING ACTIVITY:");
+                                Console.WriteLine("Activity: ");
+                                Console.WriteLine(task);
+
+                                Console.Write("Enter a Activity to Remove: ");
+                                string remove = Console.ReadLine();
+                                task = task.Replace(remove, "");
+
+                                Console.WriteLine("\nActivities: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 4:
+                                Console.WriteLine("===========================");
+                                Console.WriteLine("ALL ACTIVITIES: ");
+                                Console.WriteLine(task);
+                                Console.WriteLine("=========================== \n");
+                                break;
+
+                            default:
+                                Console.WriteLine("Invalid Input. Please choose a valid option.");
+                                break;
+                        }
                         break;
+
                     default:
                         Console.WriteLine("Invalid Input. Please choose a valid option.");
                         break;
