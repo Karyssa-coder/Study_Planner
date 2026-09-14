@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
+            string a = "", b = "", c = "", d = "";
 
-            string task = "";
             string add = "";
             int UserChoice;
             Console.Write("Enter Username: ");
@@ -21,7 +21,7 @@
             Console.WriteLine("5. Exit");
 
             Console.Write("Select an option: ");
-            int taskChoice = Convert.ToInt32(Console.ReadLine());
+            int taskChoice = Convert.ToInt16(Console.ReadLine());
             Console.WriteLine("=========================== \n");
 
             while (taskChoice != 5)
@@ -37,6 +37,7 @@
                         Console.WriteLine("4. View Task");
                         Console.WriteLine("5. Exit");
                         Console.Write("Enter choice: ");
+                        
                         UserChoice = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine("=========================== \n");
 
@@ -47,9 +48,9 @@
                                 Console.WriteLine("ADDING TASK:");
                                 Console.Write("Write a new task: ");
                                 add = Console.ReadLine();
-                                task += add + "\n";
+                                a += add + "\n";
                                 Console.WriteLine("\nYour tasks are: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(a);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -57,17 +58,17 @@
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("UPDATING TASK:");
                                 Console.WriteLine("Task: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(a);
 
                                 Console.Write("Enter a Task to Update: ");
                                 string old = Console.ReadLine();
 
                                 Console.Write("\nUpdate Task: ");
                                 string upd = Console.ReadLine();
-                                task = task.Replace(old, upd);
+                                a = a.Replace(old, upd);
 
                                 Console.WriteLine("\nTask: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(a);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -75,21 +76,21 @@
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("REMOVING TASK:");
                                 Console.WriteLine("Task: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(a);
 
                                 Console.Write("Enter a Task to Remove: ");
                                 string remove = Console.ReadLine();
-                                task = task.Replace(remove, "");
+                                a = a.Replace(remove, "");
 
                                 Console.WriteLine("\nTask: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(a);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
                             case 4:
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("ALL TASKS: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(a);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -99,6 +100,7 @@
                         }
 
                         break;
+
                     case 2:
                         Console.WriteLine("===========================");
                         Console.WriteLine("Project Task");
@@ -108,6 +110,7 @@
                         Console.WriteLine("4. View Project");
                         Console.WriteLine("5. Exit");
                         Console.Write("Enter choice: ");
+
                         UserChoice = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine("=========================== \n");
 
@@ -118,9 +121,9 @@
                                 Console.WriteLine("ADDING PROJECT:");
                                 Console.Write("Write a new Project: ");
                                 add = Console.ReadLine();
-                                task += add + "\n";
+                                b += add + "\n";
                                 Console.WriteLine("\nYour Projects are: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(b);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -128,17 +131,17 @@
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("UPDATING PROJECT:");
                                 Console.WriteLine("Project: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(b);
 
                                 Console.Write("Enter a Project to Update: ");
                                 string old = Console.ReadLine();
 
                                 Console.Write("\nUpdate Project: ");
                                 string upd = Console.ReadLine();
-                                task = task.Replace(old, upd);
+                                b = b.Replace(old, upd);
 
                                 Console.WriteLine("\nProjects: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(b);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -146,21 +149,21 @@
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("REMOVING PROJECT:");
                                 Console.WriteLine("Project: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(b);
 
                                 Console.Write("Enter a Project to Remove: ");
                                 string remove = Console.ReadLine();
-                                task = task.Replace(remove, "");
+                                b = b.Replace(remove, "");
 
                                 Console.WriteLine("\nProjects: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(b);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
                             case 4:
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("ALL PROJECTS: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(b);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -176,9 +179,10 @@
                         Console.WriteLine("1. Add Activity");
                         Console.WriteLine("2. Update Activity");
                         Console.WriteLine("3. Remove Activity");
-                        Console.WriteLine("4. View Project");
+                        Console.WriteLine("4. View Projects");
                         Console.WriteLine("5. Exit");
                         Console.Write("Enter choice: ");
+
                         UserChoice = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine("=========================== \n");
 
@@ -189,9 +193,9 @@
                                 Console.WriteLine("ADDING ACTIVITY:");
                                 Console.Write("Write a new Activity: ");
                                 add = Console.ReadLine();
-                                task += add + "\n";
+                                c += add + "\n";
                                 Console.WriteLine("\nYour Activities are: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(c);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -199,17 +203,17 @@
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("UPDATING ACTIVITY:");
                                 Console.WriteLine("Activity: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(c);
 
                                 Console.Write("Enter a Activity to Update: ");
                                 string old = Console.ReadLine();
 
                                 Console.Write("\nUpdate Activity: ");
                                 string upd = Console.ReadLine();
-                                task = task.Replace(old, upd);
+                                c = c.Replace(old, upd);
 
                                 Console.WriteLine("\nActivities: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(c);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -217,21 +221,21 @@
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("REMOVING ACTIVITY:");
                                 Console.WriteLine("Activity: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(c);
 
                                 Console.Write("Enter a Activity to Remove: ");
                                 string remove = Console.ReadLine();
-                                task = task.Replace(remove, "");
+                                c = c.Replace(remove, "");
 
                                 Console.WriteLine("\nActivities: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(c);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
                             case 4:
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("ALL ACTIVITIES: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine(c);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
@@ -244,12 +248,13 @@
                     case 4:
                         Console.WriteLine("===========================");
                         Console.WriteLine("Exam/Quiz Reviewer");
-                        Console.WriteLine("1. Add Activity");
-                        Console.WriteLine("2. Update Activity");
-                        Console.WriteLine("3. Remove Activity");
-                        Console.WriteLine("4. View Project");
+                        Console.WriteLine("1. Add Reviewer");
+                        Console.WriteLine("2. Update Reviewer");
+                        Console.WriteLine("3. Remove Reviewer");
+                        Console.WriteLine("4. View Records of Exam/Quiz");
                         Console.WriteLine("5. Exit");
                         Console.Write("Enter choice: ");
+
                         UserChoice = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine("=========================== \n");
 
@@ -257,52 +262,81 @@
                         {
                             case 1:
                                 Console.WriteLine("===========================");
-                                Console.WriteLine("ADDING ACTIVITY:");
-                                Console.Write("Write a new Activity: ");
-                                add = Console.ReadLine();
-                                task += add + "\n";
-                                Console.WriteLine("\nYour Activities are: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine("ADDING REVIEWER:");
+                                Console.WriteLine("1. For Quiz");
+                                Console.WriteLine("2. For Exam");
+
+                                Console.Write("Select an option: ");
+                                int ReviewerChoice = Convert.ToInt16(Console.ReadLine());
                                 Console.WriteLine("=========================== \n");
+
+                                while (true)   
+                                { 
+                                    if (ReviewerChoice == 1)
+                                        {
+                                            Console.Write("Write a new Reviewer for Quiz: ");
+                                            string quiz = Console.ReadLine();
+                                            d += quiz + "\n";
+                                            Console.WriteLine("\nYour Reviewers for Quiz are: ");
+                                            Console.WriteLine(d);
+                                            Console.WriteLine("=========================== \n");
+                                        }
+
+                                    else if (ReviewerChoice == 2)
+                                        {
+                                            Console.Write("Write a new Reviewer for Exam: ");
+                                            string exam = Console.ReadLine();
+                                            d += exam + "\n";
+                                            Console.WriteLine("\nYour Reviewers for Exam are: ");
+                                            Console.WriteLine(d);
+                                            Console.WriteLine("=========================== \n");
+                                        }
+
+                                    else                   
+                                        {
+                                            Console.WriteLine("Invalid Input. Please choose a valid option.");
+                                        }
+                                } 
+
                                 break;
 
                             case 2:
                                 Console.WriteLine("===========================");
-                                Console.WriteLine("UPDATING ACTIVITY:");
-                                Console.WriteLine("Activity: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine("UPDATING REVIEWER:");
+                                Console.WriteLine("Reviewer: ");
+                                Console.WriteLine(d);
 
-                                Console.Write("Enter a Activity to Update: ");
+                                Console.Write("Enter a Reviewer to Update: ");
                                 string old = Console.ReadLine();
 
-                                Console.Write("\nUpdate Activity: ");
+                                Console.Write("\nUpdate Reviewer: ");
                                 string upd = Console.ReadLine();
-                                task = task.Replace(old, upd);
+                                d = d.Replace(old, upd);
 
-                                Console.WriteLine("\nActivities: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine("\nReviewers: ");
+                                Console.WriteLine(d);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
                             case 3:
                                 Console.WriteLine("===========================");
-                                Console.WriteLine("REMOVING ACTIVITY:");
-                                Console.WriteLine("Activity: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine("REMOVING REVIEWER:");
+                                Console.WriteLine("Reviewer: ");
+                                Console.WriteLine(d);
 
-                                Console.Write("Enter a Activity to Remove: ");
+                                Console.Write("Enter a Reviewer to Remove: ");
                                 string remove = Console.ReadLine();
-                                task = task.Replace(remove, "");
+                                d = d.Replace(remove, "");
 
-                                Console.WriteLine("\nActivities: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine("\nReviewers: ");
+                                Console.WriteLine(d);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
                             case 4:
                                 Console.WriteLine("===========================");
-                                Console.WriteLine("ALL ACTIVITIES: ");
-                                Console.WriteLine(task);
+                                Console.WriteLine("ALL REVIEWERS: ");
+                                Console.WriteLine(d);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
