@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            string a = "", b = "", c = "", d = "";
+            string a = "", b = "", c = "", d = "", e = "";
 
             string add = "";
             int UserChoice;
@@ -265,46 +265,61 @@
                                 Console.WriteLine("ADDING REVIEWER:");
                                 Console.WriteLine("1. For Quiz");
                                 Console.WriteLine("2. For Exam");
+                                Console.WriteLine("3. Exit");
 
                                 Console.Write("Select an option: ");
                                 int ReviewerChoice = Convert.ToInt16(Console.ReadLine());
                                 Console.WriteLine("=========================== \n");
 
-                                while (true)   
-                                { 
+                                while (ReviewerChoice != 3)
+                                {
+
                                     if (ReviewerChoice == 1)
-                                        {
-                                            Console.Write("Write a new Reviewer for Quiz: ");
-                                            string quiz = Console.ReadLine();
-                                            d += quiz + "\n";
-                                            Console.WriteLine("\nYour Reviewers for Quiz are: ");
-                                            Console.WriteLine(d);
-                                            Console.WriteLine("=========================== \n");
-                                        }
+                                    {
+                                        Console.Write("Write a new Reviewer for Quiz: ");
+                                        string quiz = Console.ReadLine();
+                                        d += quiz + "\n";
+                                        Console.WriteLine("\nYour Reviewers for Quiz are: ");
+                                        Console.WriteLine(d);
+                                        Console.WriteLine("=========================== \n");
+                                    }
 
                                     else if (ReviewerChoice == 2)
-                                        {
-                                            Console.Write("Write a new Reviewer for Exam: ");
-                                            string exam = Console.ReadLine();
-                                            d += exam + "\n";
-                                            Console.WriteLine("\nYour Reviewers for Exam are: ");
-                                            Console.WriteLine(d);
-                                            Console.WriteLine("=========================== \n");
-                                        }
+                                    {
+                                        Console.Write("Write a new Reviewer for Exam: ");
+                                        string exam = Console.ReadLine();
+                                        e += exam + "\n";
+                                        Console.WriteLine("\nYour Reviewers for Exam are: ");
+                                        Console.WriteLine(e);
+                                        Console.WriteLine("=========================== \n");
+                                    }
 
-                                    else                   
-                                        {
-                                            Console.WriteLine("Invalid Input. Please choose a valid option.");
-                                        }
-                                } 
+                                    else
+                                    {
+                                        Console.WriteLine("Invalid Input. Please choose a valid option.");
+                                    }
+
+                                    Console.WriteLine("===========================");
+                                    Console.WriteLine("ADDING REVIEWER:");
+                                    Console.WriteLine("1. For Quiz");
+                                    Console.WriteLine("2. For Exam");
+                                    Console.WriteLine("3. Exit");
+
+                                    Console.Write("Select an option: ");
+                                    ReviewerChoice = Convert.ToInt16(Console.ReadLine());
+                                    Console.WriteLine("=========================== \n");
+                                }
 
                                 break;
 
                             case 2:
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("UPDATING REVIEWER:");
-                                Console.WriteLine("Reviewer: ");
+                                Console.WriteLine("Quiz Reviewer: ");
                                 Console.WriteLine(d);
+
+                                Console.WriteLine("\nExam Reviewer: ");
+                                Console.WriteLine(e);
 
                                 Console.Write("Enter a Reviewer to Update: ");
                                 string old = Console.ReadLine();
@@ -312,31 +327,46 @@
                                 Console.Write("\nUpdate Reviewer: ");
                                 string upd = Console.ReadLine();
                                 d = d.Replace(old, upd);
+                                e = e.Replace(old, upd);
 
                                 Console.WriteLine("\nReviewers: ");
                                 Console.WriteLine(d);
+
+                                Console.WriteLine("\nExam Reviewer: ");
+                                Console.WriteLine(e);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
                             case 3:
                                 Console.WriteLine("===========================");
                                 Console.WriteLine("REMOVING REVIEWER:");
-                                Console.WriteLine("Reviewer: ");
+                                Console.WriteLine("Quiz Reviewer: ");
                                 Console.WriteLine(d);
+
+                                Console.WriteLine("\nExam Reviewer: ");
+                                Console.WriteLine(e);
 
                                 Console.Write("Enter a Reviewer to Remove: ");
                                 string remove = Console.ReadLine();
                                 d = d.Replace(remove, "");
+                                e = e.Replace(remove, "");
 
                                 Console.WriteLine("\nReviewers: ");
                                 Console.WriteLine(d);
+
+                                Console.WriteLine("\nExam Reviewer: ");
+                                Console.WriteLine(e);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
                             case 4:
                                 Console.WriteLine("===========================");
-                                Console.WriteLine("ALL REVIEWERS: ");
+                                Console.WriteLine("ALL REVIEWERS");
+                                Console.WriteLine("Quiz Reviewer: ");
                                 Console.WriteLine(d);
+
+                                Console.WriteLine("\nExam Reviewer: ");
+                                Console.WriteLine(e);
                                 Console.WriteLine("=========================== \n");
                                 break;
 
