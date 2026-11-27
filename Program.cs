@@ -5,12 +5,53 @@
         static void Main(string[] args)
         {
             string a = "", b = "", c = "", d = "", e = "";
-
             string add = "";
             int UserChoice;
-            Console.Write("Enter Username: ");
-            string username = Console.ReadLine();
 
+        // Registered accounts (username, password), like the facultyNumbers list in the PUP system
+
+
+
+            Dictionary<string, string> accounts = new Dictionary<string, string>();
+            accounts.Add("karys", "1234");
+            accounts.Add("cellar", "abcd");
+
+            Console.WriteLine("Welcome to Study Planner");
+            DisplayLoginOptions();
+            string checkLogin = Console.ReadLine();
+
+            string username = "";
+            bool isLoggedIn = false;
+
+            while (checkLogin != "x" && !isLoggedIn)
+            {
+                if (checkLogin == "1")
+                {
+                    username = ProcessLogin(accounts);
+                    isLoggedIn = username != "";
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect input...");
+                }
+
+                if (!isLoggedIn)
+                {
+                    DisplayLoginOptions();
+                    checkLogin = Console.ReadLine();
+                }
+            }
+
+            if (!isLoggedIn)
+            {
+                Console.WriteLine("Thank you for using Study Planner");
+                return;
+            }
+
+
+
+
+        //========================================================================================
             Console.WriteLine("===========================");
             Console.WriteLine("Hello " + username + ", welcome to Study Planner! \n");
             Console.WriteLine("What would you like to do?");
@@ -18,7 +59,7 @@
             Console.WriteLine("2. Project Task");
             Console.WriteLine("3. Activity Task");
             Console.WriteLine("4. Exam/Quiz Reviewer");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("5. Log Out");
 
             Console.Write("Select an option: ");
             int taskChoice = Convert.ToInt16(Console.ReadLine());
@@ -37,7 +78,7 @@
                         Console.WriteLine("4. View Task");
                         Console.WriteLine("5. Exit");
                         Console.Write("Enter choice: ");
-                        
+
                         UserChoice = Convert.ToInt16(Console.ReadLine());
                         Console.WriteLine("=========================== \n");
 
@@ -92,6 +133,10 @@
                                 Console.WriteLine("ALL TASKS: ");
                                 Console.WriteLine(a);
                                 Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 5:
+                                Console.WriteLine("Exiting Assignment/Homework Task...");
                                 break;
 
                             default:
@@ -167,6 +212,10 @@
                                 Console.WriteLine("=========================== \n");
                                 break;
 
+                            case 5:
+                                Console.WriteLine("Exiting Project Task...");
+                                break;
+
                             default:
                                 Console.WriteLine("Invalid Input. Please choose a valid option.");
                                 break;
@@ -237,6 +286,10 @@
                                 Console.WriteLine("ALL ACTIVITIES: ");
                                 Console.WriteLine(c);
                                 Console.WriteLine("=========================== \n");
+                                break;
+
+                            case 5:
+                                Console.WriteLine("Exiting Activity Task...");
                                 break;
 
                             default:
@@ -370,6 +423,10 @@
                                 Console.WriteLine("=========================== \n");
                                 break;
 
+                            case 5:
+                                Console.WriteLine("Exiting Reviewer...");
+                                break;
+
                             default:
                                 Console.WriteLine("Invalid Input. Please choose a valid option.");
                                 break;
@@ -394,8 +451,50 @@
                 Console.WriteLine("=========================== \n");
             }
 
+            Console.WriteLine("You have been logged out.\n");
+        }
+    
+            
 
 
+        
+
+
+        //========================================================================================
+
+        static void DisplayLoginOptions()
+        {
+            Console.WriteLine("Enter 1 - for Login");
+            Console.WriteLine("Enter x - to exit");
+            Console.Write("User Input: ");
+        }
+
+        // Returns the username if login succeeds, or "" if it fails
+        static string ProcessLogin(Dictionary<string, string> accounts)
+        {
+            int attempts = 3;
+
+            while (attempts > 0)
+            {
+                Console.Write("Enter Username: ");
+                string user = Console.ReadLine();
+
+                Console.Write("Enter Password: ");
+                string pass = Console.ReadLine();
+
+                if (accounts.ContainsKey(user) && accounts[user] == pass)
+                {
+                    Console.WriteLine("Login successful!\n");
+                    return user;
+                }
+
+                attempts--;
+                Console.WriteLine("Wrong username or password. Attempts left: " + attempts + "\n");
+            }
+
+            Console.WriteLine("Too many failed attempts.\n");
+            return "";
         }
     }
 }
+    
